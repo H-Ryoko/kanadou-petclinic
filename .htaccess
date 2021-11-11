@@ -1,0 +1,14 @@
+DirectoryIndex index.html index.htm index.shtml index.php index.cgi
+Options -Indexes
+AuthUserFile /home/hida84/www/haru926/kadai_dhf/.htpasswd
+AuthType Basic
+AuthName "Web access"
+Require valid-user
+Satisfy all
+Order deny,allow
+# BEGIN WordPress
+# "BEGIN WordPress" から "END WordPress" までのディレクティブ (行) は
+# 動的に生成され、WordPress フィルターによってのみ修正が可能です。
+# これらのマーカー間にあるディレクティブへのいかなる変更も上書きされてしまいます。
+
+# END WordPress

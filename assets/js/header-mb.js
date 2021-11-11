@@ -1,0 +1,3 @@
+// JavaScript Document
+
+document.write('<div class="nav-button"><a href="https://petlife.asia/hospital/9337/" target="_blank" class="nav-button__reserve-button"><p>ご予約はこちら</p><img src="assets/image/common/reserve.svg" alt="予約の画像" width="100"></a><div class="nav-button__hamburger-button"><div class="nav-button__hamburger-button__box"><span class="nav-button__hamburger-button__box__line" id="line1"></span><span class="nav-button__hamburger-button__box__line" id="line2"></span><span class="nav-button__hamburger-button__box__line" id="line3"></span></div></div></div>');
