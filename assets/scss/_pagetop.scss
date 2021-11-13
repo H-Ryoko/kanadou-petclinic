@@ -1,0 +1,40 @@
+/* Scss Document */
+
+.section-top {
+  padding: 0 50px;
+  height: 10vh;
+  margin: 20vh auto 25vw auto;
+  h1 {
+    letter-spacing: 0.5rem;
+    font: {
+      size: 2.5vw;
+      weight: 500;
+    }
+    margin-bottom: 2vw;
+  }
+  p {
+    letter-spacing: 0.3rem;
+    font: {
+      size: 1.5vw;
+      weight: 500;
+    }
+    margin-bottom: 3.5vw;
+  }
+  img {
+    width: 10%;
+  }
+  @include sp {
+    padding: 0 30px;
+    margin-bottom: 45vw;
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    img {
+      width: 15%;
+    }
+  }
+}

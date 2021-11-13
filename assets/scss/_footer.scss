@@ -1,0 +1,259 @@
+/* Scss Document */
+
+.footer {
+  width: 100%;
+  background-color: #CFE094;
+  text-align: center; 
+  &__menu-list {
+    padding: 3vw 15vh;
+    margin-bottom: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    border-bottom: solid 3px #b1cc54;
+    li {
+      width: 15%;
+      a {
+        text-decoration: none;
+        color: #3a3a3a;
+        font: {
+          size: 1.4vw;
+          weight: 500;
+        }
+      }
+      @include tb {
+        width: 20%;
+        a {
+          font-size: 1.5rem;
+        }
+      }
+      &:first-child {
+        width: 10%;
+      }
+    }
+  }
+  &__second {
+    text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    &__rogo-address {
+      text-align: left;
+      width: 30%;
+      img {
+        width: 55%;
+      }
+      address {
+        margin-top: -2vw;
+        margin-bottom: 1vw;
+        line-height: 2vw;
+        font: {
+          style: normal;
+          size: 1.3vw;
+          weight: 500;
+        }
+        span {
+          font-size: 1vw;
+        }
+      }
+      p {
+        font: {
+          size: 1vw;
+          weight: 500;
+        }
+        span {
+          font: {
+            size: 2vw;
+            weight: 600;
+          }
+        }
+      }
+    }
+    &__callender {
+      text-align: left;
+      width: 64%;
+      img {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+      p {
+        font: {
+          size: 1.3vw;
+          weight: 400;
+        }
+      }
+    }
+  }
+  &__third {
+    width: 60%;
+    margin: 0 auto 5vw auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    text-align: center;
+    &__address {
+      display: none;
+    }
+    p {
+		font: {
+		  size: 1.8rem;
+      weight: 400; 
+		}
+      span {
+        font: {
+          size: 2.5rem;
+          weight: 600;
+        }
+      }
+    }
+    .scroll-top {
+      width: 35px;
+      height: 35px;
+      border: solid 4px #89b34c;
+      cursor: pointer;
+      text-align: right;
+      position: fixed;
+      bottom: 30px;
+      right: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      z-index: 500;
+      a {
+        width: 100%;
+        text-decoration: none;
+        color: #333;
+        position: relative;
+        img {
+          width: 60%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform : translate(-50%,-50%);
+        }
+      }
+    }
+  }
+  &__callender {
+    display: none;
+  }
+  &__sp-second {
+    display: none;
+  }
+  .copyright {
+    font-size: 1vw;
+    text-align: center;
+    padding-bottom: 1vw;
+  }
+  @include tb {
+    &__second {
+      &__rogo {
+        width: 28%;
+        img {
+          width: 100%;
+        }
+      }
+      &__callender {
+        width: 60%;
+        img {
+          width: 100%;
+        }
+        p {
+          font-size: 1.2rem;
+          line-height: 2rem;
+        }
+      }
+    }
+    &__third {
+      address {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        span {
+          font-size: 1.3rem;
+        }
+      }
+      p {
+        font-size: 1.3rem;
+        span {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  @include sp {
+    &__menu-list {
+      display: none;
+  }
+    &__second {
+      display: none;
+    }
+    &__callender {
+      padding-top: 30px;
+      display: block;
+      img {
+        width: 80%;
+      }
+      p {
+        font: {
+          size: 1.3rem;
+          weight: 400;
+        }
+      }
+    }
+    &__sp-second {
+      display: flex;
+      margin: 20px auto 0 auto;
+      width: 80%;
+      align-items: flex-start;
+      justify-content: space-around;
+      &__menu-list {
+        list-style: none;
+        text-align: left;
+        li {
+          margin-bottom: 10px;
+          a {
+            color: #333;
+            text-decoration: none;
+            font: {
+              size: 1.5rem;
+              weight: 500;
+            }
+          }
+        }
+      }
+    }
+    &__third {
+      width: 80%;
+      &__address {
+        display: block;
+        text-align: left;
+        width: 70%;
+        margin-top: -5vh;
+        margin-left: 10vw;
+        address {
+          line-height: 2.5rem;
+          font: {
+            size: 1.5rem;
+            style: normal;
+          } 
+          span {
+            font-size: 1.3rem;
+          }
+        }
+      }
+      p {
+        font-size: 1.3rem;
+        span {
+          font-size: 1.8rem;
+        }
+      }
+      .scroll-top {
+        right: 30px;
+      }
+    }
+  }
+}

@@ -1,0 +1,321 @@
+/* Scss Document */
+
+$titleFontSize: 2vw;
+$subtitleFontSize: 1vw;
+$menutitleFontColor: #89b34c;
+
+/*スマホ版*/
+$sp-titleFontSize: 2rem;
+$sp-subtitleFontSize: 1.3rem;
+
+@mixin pc {
+  @media(min-width: 700px) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media(max-width: 700px) {
+    @content;
+  }
+}
+
+@mixin tb {
+  @media(min-width: 700px) and (max-width: 1000px) {
+    @content;
+  }
+}
+
+.title {
+  text-align: left;
+  font: {
+    size: $titleFontSize;
+    weight: 600;
+  }
+  color: $menutitleFontColor;
+  margin-bottom: 2vw;
+  @include tb {
+    font-size: $sp-titleFontSize;
+  }
+  @include sp {
+    font-size: $sp-titleFontSize;
+    margin-bottom: 2rem;
+  }
+}
+
+
+.section-contents {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  /* サイドバーの装飾 */
+  @import 'sidebar';
+  &__right {
+    width: 82%;
+    /* トップの装飾 */
+    @import 'pagetop';
+    .section-doctor {
+      padding: 0 50px;
+      margin-bottom: 10vw;
+      &__box {
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        picture {
+          width: 40%;
+          img {
+            border-radius: 20px;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        &__message {
+          text-align: left;
+          width: 80%;
+          animation-name: fadeLeftAnime;
+          animation-duration: 1.5s;
+          animation-fill-mode: forwards;
+          opacity: 0;
+          transform: translate(-100px, 0);
+          transition: 1s;
+          margin: 2vw 0 0 -4vw;
+          h4 {
+            width: 35%;
+            font-size: 1.6vw;
+            margin-bottom: 1.5vw;
+            span {
+              padding-left: 1.5vw;
+              font-size: 1.8vw;
+            }
+            &:after {
+              background-color: $menutitleFontColor;
+              border-radius: 5px;
+              content: "";
+              display: block;
+              height: 6px;
+              margin-top: 0.3vw;
+            }
+          }
+          p {
+            line-height: 2vw;
+            font: {
+              size: 1.2vw;
+              weight: 400;
+            }
+            &:last-child {
+              padding-top: 2vw;
+            }
+          }
+          &-scroll {
+            opacity: 1;
+            transform: translate(0,0);
+          }
+        }
+      }
+      @include tb {
+        &__box {
+          &__message {
+            width: 60%;
+            h4 {
+              font-size: 1.5rem;
+              span {
+                font-size: 2rem;
+              }
+            }
+            p {
+              font-size: 1.3rem;
+              line-height: 2.3rem;
+            }
+          }
+        }
+      }
+      @include sp {
+        padding: 0 30px;
+        margin-bottom: 100px;
+        &__box {
+          flex-direction: column;
+          picture {
+            width: 100%;
+            margin-bottom: 1.5rem;
+          }
+          &__message {
+            width: 100%;
+            transform: translate(0, 100px);
+            margin: 0;
+            h4 {
+              font-size: 1rem;
+              span {
+                font-size: 1.8rem;
+              }
+            }
+            p {
+              font-size: 1.3rem;
+              line-height: 2.3rem;
+            }
+            &-scroll {
+              transform: translate(0,0);
+            }
+          }
+        }
+      }
+    }
+    
+    .section-hotel {
+      padding: 0 50px;
+      margin-bottom: 10vw;
+      p {
+        line-height: 2.5vw;
+        text-align: left;
+        font: {
+          size: 1.4vw;
+          weight: 400;
+        }
+      }
+      &__imgbox {
+        position: relative;
+        text-align: right;
+        width: 100%;
+        height: 20vw;
+        opacity: 0;
+        transform: translate(0, 100px);
+        transition: all 1s;
+        &__right {
+          position: absolute;
+          top: 0;
+          right: 0;
+          border-radius: 20px;
+          width: 30%;
+        }
+        &__left {
+          position: absolute;
+          bottom: 15%;
+          left: 40%;
+          border-radius: 20px;
+          width: 25%;
+        }
+        &-scroll {
+          opacity: 1;
+          transform: translate(0,0);
+        }
+      }
+      @include tb {
+        p {
+          font-size: 1.3rem;
+        }
+      }
+      @include sp {
+        padding: 0 30px;
+        margin-bottom: 60vw;
+        p {
+          font-size: 1.3rem;
+          line-height: 2.3rem;
+          margin-bottom: 15px;
+        }
+        &__imgbox {
+          position: static;
+          text-align: center;
+          &__left {
+            display: none;
+          }
+          &__right {
+            position: static;
+            width: 90%;
+            height: 180px;
+            margin: 0 auto;
+            object-fit: cover;
+            object-position: bottom;
+          }
+        }
+      }
+    }
+    .section-garrely {
+      padding: 0 50px;
+      margin-bottom: 10vw;
+      &__image {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        list-style: none;
+        img {
+          width: 300px;
+          margin: 4vw 2vw 0 2vw;
+          border-radius: 20px;
+          @include tb {
+            width: 200px;
+          }
+        }
+        p {
+          font: {
+            size: 1.3vw;
+            weight: 400;
+          }
+          padding-top: 0.5vw;
+        }
+      }
+      @include sp {
+        padding: 0 30px;
+        margin-bottom: 20vw;
+        &__image {
+          flex-direction: column;
+          img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            &:nth-child(1) {
+              object-position: top;
+            }
+            &:nth-child(3) {
+              object-position: top;
+            }
+            &:nth-child(4) {
+              object-position: top;
+            }
+          }
+          p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
+    @include sp {
+      width: 100%;
+    }
+  }
+}
+/* フッターの装飾 */
+@import 'footer';
+/* ハンバーガーボタンの装飾 */
+@import 'hamburger';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

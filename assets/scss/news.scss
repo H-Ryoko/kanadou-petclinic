@@ -1,0 +1,186 @@
+/* Scss Document */
+
+$titleFontSize: 2vw;
+$subtitleFontSize: 1vw;
+$menutitleFontColor: #89b34c;
+
+/*スマホ版*/
+$sp-titleFontSize: 2rem;
+$sp-subtitleFontSize: 1.3rem;
+
+@mixin pc {
+  @media(min-width: 700px) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media(max-width: 700px) {
+    @content;
+  }
+}
+
+@mixin tb {
+  @media(min-width: 700px) and (max-width: 1000px) {
+    @content;
+  }
+}
+
+.title {
+  text-align: left;
+  font: {
+    size: $titleFontSize;
+    weight: 600;
+  }
+  color: $menutitleFontColor;
+  margin-bottom: 2vw;
+  @include tb {
+    font-size: $sp-titleFontSize;
+  }
+  @include sp {
+    font-size: $sp-titleFontSize;
+    margin-bottom: 2rem;
+  }
+}
+
+.contents {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  /* サイドバーの装飾 */
+  @import 'sidebar';
+  &__right {
+    width: 82%;
+    /* トップの装飾 */
+    @import 'pagetop';
+    .section-blog {
+      padding: 0 50px;
+      text-align: left;
+      &__list {
+        list-style: none;
+        li {
+          padding-bottom: 2vw;
+          border-bottom: dashed 2px $menutitleFontColor;
+          margin-bottom: 3vw;
+          .blog {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            color: $menutitleFontColor;
+            margin-bottom: 1.8vw;
+            &__date {
+              width: 12%;
+              font-size: 1.5vw;
+              font-weight: 400;
+            }
+            &__title {
+              width: 87%;
+              font-size: 1.8vw;
+            }
+          }
+          .blog-text {
+            width: 90%;
+            line-height: 2.5vw;
+            font: {
+              size: 1.3vw;
+              weight: 400;
+            }
+          }
+        }
+      }
+      &__number {
+        list-style: none;
+        text-align: center;
+        margin-bottom: 5vw;
+        font-size: 0;
+        display: flex;
+        justify-content: center;
+        li {
+          padding: 0.8vw 1vw;
+          border: solid 2px $menutitleFontColor;
+          &:first-child {
+            border-right: none;
+          }
+          &:nth-child(2) {
+            border-right: none;
+          }
+          &:nth-child(3) {
+            border-right: none;
+          }
+          &:nth-child(4) {
+            border-right: none;
+          }
+          a {
+            display: block;
+            text-decoration: none;
+            color: $menutitleFontColor;
+            font-size: 2vw;
+          }
+        }
+      }
+      @include sp {
+        padding: 0 30px;
+        &__list {
+          li {
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            .blog {
+              flex-direction: column;
+              align-items: flex-start;
+              margin-bottom: 10px;
+              &__date {
+                width: 100%;
+                font-size: 1.3rem;
+              }
+              &__title {
+                width: 100%;
+                font-size: 1.8rem;
+              }
+            }
+            .blog-text {
+              width: 95%;
+              font-size: 1.3rem;
+              line-height: 2.5rem;
+            }
+          }
+        }
+        &__number {
+          margin-bottom: 40px;
+          li {
+            padding: 5px 10px;
+            a {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+    @include sp {
+      width: 100%;
+    }
+  }
+}
+/* フッターの装飾 */
+@import 'footer';
+/* ハンバーガーボタンの装飾 */
+@import 'hamburger';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

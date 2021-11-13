@@ -1,0 +1,462 @@
+/* Scss Document */
+
+$titleFontSize: 2vw;
+$subtitleFontSize: 1vw;
+$menutitleFontColor: #89b34c;
+
+/*スマホ版*/
+$sp-titleFontSize: 2rem;
+$sp-subtitleFontSize: 1.3rem;
+
+@mixin pc {
+  @media(min-width: 700px) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media(max-width: 700px) {
+    @content;
+  }
+}
+
+@mixin tb {
+  @media(min-width: 700px) and (max-width: 1000px) {
+    @content;
+  }
+}
+
+.title {
+  text-align: left;
+  font: {
+    size: $titleFontSize;
+    weight: 600;
+  }
+  color: $menutitleFontColor;
+  margin-bottom: 2vw;
+  @include tb {
+    font-size: $sp-titleFontSize;
+  }
+  @include sp {
+    font-size: $sp-titleFontSize;
+    margin-bottom: 2rem;
+  }
+}
+
+.contents {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  /* サイドバーの装飾 */
+  @import 'sidebar';
+  &__right {
+    width: 82%;
+    /* サイドバーの装飾 */
+    @import 'pagetop';
+    .section-time {
+      text-align: left;
+      padding: 0 50px;
+      margin-bottom: 15vw;
+      &__callender {
+        margin-bottom: 2vw;
+        img {
+          width: 50%;
+        }
+        p {
+          line-height: 2.5vw;
+          font: {
+            size: 1.2vw;
+            weight: 400;
+          }
+        }
+      }
+      h4 {
+        font-size: 1.6vw;
+        font-weight: 500;
+        margin-bottom: 0.8vw;
+      }
+      &__night {
+        font: {
+          size: 1.2vw;
+          weight: 400;
+        }
+        line-height: 2vw;
+      }
+      @include sp {
+        padding: 0 30px;
+        margin-bottom: 80px;
+        &__callender {
+          margin-bottom: 30px;
+          img {
+            width: 100%;
+          }
+          p {
+            font-size: 1.3rem;
+          }
+        }
+        h4 {
+          font-size: 1.5rem;
+        }
+        &__night {
+          line-height: 2.5rem;
+          font-size: 1.4rem;
+        }
+      }
+    }
+    .section-animal {
+      padding: 0 50px;
+      margin-bottom: 15vw;
+      &__list {
+        text-align: center;
+        list-style: none;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-end;
+        justify-content: center;
+        margin-bottom: 1.5vw;
+        li {
+          width: 18%;
+          margin: 0 1.5vw;
+          border: solid 10px $menutitleFontColor;
+          border-radius: 10px;
+          opacity: 0;
+          img {
+            width: 60%;
+            margin: 0.5vw;
+          }
+          p {
+            margin-bottom:  0.5vw;
+            font: {
+              size: 1.6vw;
+              weight: 600;
+            }
+            span {
+              font: {
+                size: 1.3vw;
+                weight: 500;
+              }
+            }
+          }
+          &:first-child {
+            margin-left: 0;
+          }
+          &:last-child {
+            p {
+              font-size: 2vw;
+            }
+            width: 10%;
+            margin: 0;
+            border: initial;
+          }
+        }
+        .fadeUp {
+          animation-name: fadeUpAnime;
+          animation-duration: 1s;
+          animation-fill-mode: forwards;
+          opacity: 0;
+        }
+        @keyframes fadeUpAnime {
+          from {
+            opacity: 0;
+            transform: translateY(100px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+      &__attention {
+        width: 80%;
+        margin: 0 auto;
+        text-align: left;
+        font: {
+          size: 1.2vw;
+          weight: 400;
+        }
+      }
+      @include sp {
+        padding: 0 30px;
+        margin-bottom: 80px;
+        &__list {
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 30px;
+          li {
+            width: 60%;
+            border: solid 10px $menutitleFontColor;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            p {
+              font-size: 2rem;
+              span {
+                font-size: 1.4rem;
+              }
+            }
+            &:last-child {
+              width: 30%;
+              margin: 0 0 0 auto;
+              p {
+                font-size: 2.5rem;
+              }
+            }
+          }
+        }
+        &__attention {
+          width: 100%;
+          line-height: 3rem;
+          font-size: 1.5rem;
+        }
+      }
+    }
+    .section-needle {
+      text-align: left;
+      margin-bottom: 15vw;
+      padding-right: 50px;
+      .consulation-box {
+        opacity: 0;
+        transform: translate(0, 100px);
+        transition: all 1.5s;
+        img {
+          width: 18%;
+        }
+        .needle-description {
+          margin: -8vw 0 0 50px;
+          .needle-title {
+            margin-bottom: 2vw;
+            font-size: $titleFontSize;
+            color: $menutitleFontColor;
+          }
+          p {
+            line-height: 2.2vw;
+            font: {
+              size: 1.2vw;
+              weight: 400;
+            }
+            span {
+              font: {
+                size: 1.3vw;
+                weight: 500;
+              }
+            }
+          }
+        }
+        &-scroll {
+          opacity: 1;
+          transform: translate(0,0);
+        }
+      }
+      @include sp {
+        padding-right: 30px;
+        margin-bottom: 60px;
+        .consulation-box {
+          img {
+            width: 50%;
+          }
+          .needle-description {
+            margin: -25vw 0 0 50px;
+            .needle-title {
+              font-size: $sp-titleFontSize;
+              margin-bottom: 20px;
+            }
+            p {
+              line-height: 2.8rem;
+              font-size: 1.4rem;
+              span {
+                font-size: 1.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    .section-vaccination {
+      margin-bottom: 15vw;
+      text-align: left;
+      padding-right: 50px;
+      .consulation-content {
+        opacity: 0;
+        transform: translate(0, 100px);
+        transition: all 1.5s;
+        &__top {
+          display: block;
+          width: 18%;
+        }
+        .consulation-description {
+          margin: -8vw 0 0 50px;
+          .consulation-title {
+            font-size: $titleFontSize;
+            color: $menutitleFontColor;
+            margin-bottom: 2vw;
+          }
+          p {
+            line-height: 2.2vw;
+            font: {
+              size: 1.2vw;
+              weight: 400;
+            }
+            margin-bottom: 2vw;
+            &:last-child {
+              padding-top: 2vw;
+            }
+            span {
+              font: {
+                size: 1.3vw;
+                weight: 500;
+              }
+            }
+          }
+          .consulation-content__bottom {
+            display: block;
+            width: 50%;
+            border-radius: 20px;
+            margin: 0 0 0 auto;
+          }
+        }
+        &-scroll {
+          opacity: 1;
+          transform: translate(0,0);
+        }
+      }
+      @include sp {
+        padding-right: 30px;
+        margin-bottom: 60px;
+        .consulation-content {
+          img {
+            width: 50%;
+          }
+          .consulation-description {
+            margin: -25vw 0 0 50px;
+            .consulation-title {
+              font-size: $sp-titleFontSize;
+              margin-bottom: 20px;
+            }
+            p {
+              line-height: 2.8rem;
+              font-size: 1.4rem;
+              margin-bottom: 20px;
+              span {
+                font-size: 1.5rem;
+              }
+            }
+            .consulation-content__bottom {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .section-dentalcare {
+      margin-bottom: 5vw;
+      text-align: left;
+      padding-right: 50px;
+      .consulation-content {
+        opacity: 0;
+        transform: translate(0, 100px);
+        transition: all 1.5s;
+
+        &__top {
+          display: block;
+          width: 18%;
+        }
+        .consulation-description {
+          margin: -8vw 0 0 50px;
+          .consulation-title {
+            font-size: $titleFontSize;
+            color: $menutitleFontColor;
+            margin-bottom: 2vw;
+          }
+          p {
+            line-height: 2.2vw;
+            font: {
+              size: 1.2vw;
+              weight: 400;
+            }
+            margin-bottom: 2vw;
+            &:last-child {
+              padding-top: 2vw;
+            }
+            span {
+              font: {
+                size: 1.3vw;
+                weight: 500;
+              }
+            }
+          }
+          .consulation-content__bottom {
+            display: block;
+            width: 50%;
+            border-radius: 20px;
+            margin: 0 0 0 auto;
+          }
+        }
+        &-scroll {
+          opacity: 1;
+          transform: translate(0,0);
+        }
+      }
+      @include sp {
+        padding-right: 30px;
+        margin-bottom: 40px;
+        .consulation-content {
+          img {
+            width: 50%;
+          }
+          .consulation-description {
+            margin: -25vw 0 0 50px;
+            .consulation-title {
+              font-size: $sp-titleFontSize;
+              margin-bottom: 20px;
+            }
+            p {
+              line-height: 2.8rem;
+              font-size: 1.4rem;
+              margin-bottom: 20px;
+              span {
+                font-size: 1.5rem;
+              }
+            }
+            .consulation-content__bottom {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    @include sp {
+      width: 100%;
+    }
+  }
+}
+/* フッターの装飾 */
+@import 'footer';
+/* ハンバーガーボタンの装飾 */
+@import 'hamburger';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
